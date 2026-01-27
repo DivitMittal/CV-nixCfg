@@ -1,0 +1,21 @@
+# LaTeX build artifacts
+*.aux
+*.log
+*.out
+*.toc
+*.fls
+*.fdb_latexmk
+*.synctex.gz
+*.bbl
+*.blg
+*.bcf
+*.run.xml
+*.nav
+*.snm
+*.vrb
+*.lof
+*.lot
+# Generated PDFs (not final exports)
+/cv.pdf
+# Direnv
+.direnv/
