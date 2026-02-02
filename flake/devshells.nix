@@ -27,6 +27,38 @@
             nixd
             alejandra
             ;
+          ### LaTeX
+          texlive = pkgs.texlive.combine {
+            inherit
+              (pkgs.texlive)
+              ## Base (engines: pdflatex, xelatex, lualatex + latexmk)
+              scheme-small
+              ## CV classes
+              moderncv
+              ## Icons (email, github, linkedin, phone)
+              fontawesome5
+              ## Layout
+              geometry
+              enumitem
+              titlesec
+              parskip
+              multicol
+              ## Typography
+              microtype
+              lm # Latin Modern fonts
+              ## Colors & hyperlinks
+              xcolor
+              hyperref
+              ## Tables
+              booktabs
+              ## Graphics / timeline
+              pgf
+              ## Utilities
+              etoolbox
+              xifthen
+              ifmtarg
+              ;
+          };
         };
       };
     };
