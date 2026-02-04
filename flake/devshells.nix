@@ -42,7 +42,6 @@
               enumitem
               titlesec
               parskip
-              multicol
               ## Typography
               microtype
               lm # Latin Modern fonts
