@@ -8,7 +8,7 @@
 ### Infrastructure & System Administration
 - **NixOS Expert:** Declarative system configuration, home-manager, nix-darwin, nix-on-droid, flake-parts
 - **Linux/macOS SysAdmin:** systemd, launchd, Bash scripting, kernel configuration, boot management
-- **Infrastructure as Code:** Nix flakes, Ansible, Terraform, declarative infrastructure
+- **Infrastructure as Code:** Nix flakes, Ansible, Terraform, Terragrunt, OpenTofu, declarative infrastructure
 - **Containerization:** Docker, Podman, Kubernetes, multi-tenant ML workloads
 - **Developer Experience:** CI/CD automation, reproducible builds, environment management
 
