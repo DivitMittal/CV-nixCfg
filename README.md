@@ -9,19 +9,16 @@
 ---
 
 <div align='center'>
-    <a href="https://github.com/DivitMittal/DivitMittal-CV/stargazers">
-  <img src="https://img.shields.io/github/stars/DivitMittal/DivitMittal-CV?&style=for-the-badge&logo=starship&logoColor=white&color=purple" alt="stars"/>
-    </a>
     <a href="https://github.com/DivitMittal/DivitMittal-CV/">
-  <img src="https://img.shields.io/github/repo-size/DivitMittal/DivitMittal-CV?&style=for-the-badge&logo=github&logoColor=white&color=purple" alt="size" />
+  <img src="https://img.shields.io/badge/size-~800KB-orange?style=for-the-badge&logo=github&logoColor=white" alt="size" />
     </a>
     <a href="https://github.com/DivitMittal/DivitMittal-CV/blob/main/LICENSE">
-  <img src="https://img.shields.io/github/license/DivitMittal/DivitMittal-CV?&style=for-the-badge&logo=unlicense&logoColor=white&color=purple" alt="license"/>
+  <img src="https://img.shields.io/badge/license-MIT-orange?style=for-the-badge&logo=unlicense&logoColor=white" alt="license"/>
     </a>
     <a href="https://www.latex-project.org/">
-  <img src="https://img.shields.io/badge/LaTeX-moderncv-blue.svg?style=for-the-badge&logo=latex&logoColor=white&color=purple" alt="latex"/>
+  <img src="https://img.shields.io/badge/LaTeX-moderncv-orange?style=for-the-badge&logo=latex&logoColor=white" alt="latex"/>
     </a>
-    <img src="https://img.shields.io/github/languages/top/DivitMittal/DivitMittal-CV?style=for-the-badge&color=purple" alt="repo-top-language"/>
+    <img src="https://img.shields.io/badge/language-TeX-orange?style=for-the-badge&logo=latex&logoColor=white" alt="repo-top-language"/>
 </div>
 
 ---
@@ -151,4 +148,4 @@ The flake uses [`import-tree`](https://github.com/vic/import-tree) to auto-impor
 
 </div>
 
-[back-to-top]: https://img.shields.io/badge/-BACK_TO_TOP-151515?style=flat-square&color=purple
+[back-to-top]: https://img.shields.io/badge/-BACK_TO_TOP-151515?style=flat-square&color=orange
