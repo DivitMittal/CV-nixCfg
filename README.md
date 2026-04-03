@@ -88,10 +88,6 @@ nix fmt
 nix flake check
 ```
 
-Pre-commit hooks run automatically on commit: trailing whitespace, merge conflict detection, large file check, and GitHub Actions workflow rendering (`render-workflows` re-generates `.github/workflows/*.yml` from `flake/actions/*.nix`).
-
-> **Note**: GitHub Actions workflows are **generated** from `flake/actions/*.nix`. Edit the Nix sources, not the generated YAML.
-
 ---
 
 ## Project Structure
@@ -138,9 +134,6 @@ Pre-commit hooks run automatically on commit: trailing whitespace, merge conflic
 ├── flake.nix                    # Entry point — flake-parts + import-tree
 └── README.md
 ```
-
-The flake uses [`import-tree`](https://github.com/vic/import-tree) to auto-import all `*.nix` files under `flake/`, so adding a new `.nix` file there is sufficient — no explicit import needed in `flake.nix`.
-
 
 <div align="right">
 
