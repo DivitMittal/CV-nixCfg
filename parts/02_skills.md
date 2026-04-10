@@ -40,8 +40,19 @@
 - **Mobile:** Swift (basic), cross-platform development
 - **Shells:** Bash, Zsh, Fish, PowerShell - advanced scripting
 
+### Editor & Development Environment
+- **Neovim/Vim:** Expert-level configuration and usage — pure Lua config built on NvChad/Lazy.nvim, deployed reproducibly via Nix flakes
+- **LSP Integration:** 16+ language servers (clangd, hls, nixd, ts_ls, svelte, pyright, lua_ls, sourcekit, bash-ls, yaml-ls, taplo, emmet, deno, etc.) with Lspsaga for advanced UI (peek definitions, call hierarchy, outline, diagnostics)
+- **Treesitter:** 31-language syntax highlighting, AST-based indentation and text objects
+- **Code Intelligence:** nvim-cmp completions (LSP, snippets, buffer, path), Trouble.nvim diagnostics aggregation, conform.nvim auto-formatting (16+ formatters: stylua, black, prettier, alejandra, ormolu, shfmt, clang-format, etc.)
+- **AI-Augmented Editing:** GitHub Copilot (inline suggestions) + CodeCompanion (Claude/Gemini/OpenCode chat, inline prompts, visual selection context)
+- **REPL-Driven Development:** Iron.nvim interactive REPL for Python, Lua, Haskell (ghci/tidal-repl) with send-motion/send-file/send-line bindings
+- **Navigation & Search:** Flash.nvim motion, Telescope fuzzy finder, Yazi file manager integration, smart-splits window navigation
+- **Text Manipulation:** mini.nvim suite (align, surround, move), guess-indent auto-detection
+- **Workflow Tooling:** Lazygit terminal integration (Snacks.nvim), nvim-tree with Git status, zk Zettelkasten note system, Markdown rendering, image display/paste
+- **Vim Primitives:** Deep fluency in motions, macros, registers, marks, command-line, ex commands, and composable editing patterns
+
 ### Specialized Tools & Platforms
 - **Computer Vision:** OpenCV, ITK, image processing, multi-focus image fusion
 - **Virtualization:** Proxmox, KVM, hypervisor management
 - **Audio DSP:** Faust, signal processing, LLVM compilation
-- **Development Tools:** Neovim, Emacs, VS Code, terminal-based workflows
