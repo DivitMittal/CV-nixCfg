@@ -12,6 +12,12 @@ result-*
 ## local credentials (EU Login for europass/build.py)
 .envrc.local
 
+## cv-data symlink (created by devshell startup from flake input)
+tex/cv-data
+
+## personal cv.xml lives in the private cv-data repo, not here
+europass/cv.xml
+
 ## Python bytecode
 __pycache__/
 *.pyc
