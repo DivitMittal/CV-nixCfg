@@ -9,6 +9,14 @@
 result
 result-*
 
+## local credentials (EU Login for europass/build.py)
+.envrc.local
+
+## Python bytecode
+__pycache__/
+*.pyc
+*.pyo
+
 ## git pre-commit hooks (handled via cachix/git-hooks)
 .pre-commit-config.yaml
 
