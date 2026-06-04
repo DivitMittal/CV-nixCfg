@@ -18,6 +18,9 @@
           {
             name = "Update flake.lock";
             uses = "DeterminateSystems/update-flake-lock@main";
+            # cv-data is a private SSH repo; skip it so CI doesn't need
+            # SSH credentials. Update it locally with nix flake lock.
+            "with".inputs = "nixpkgs import-tree flake-parts systems devshell treefmt-nix git-hooks actions-nix";
           }
         ];
     };
