@@ -29,14 +29,18 @@
     "cv-data": {
       "flake": false,
       "locked": {
-        "path": "./data.example",
-        "type": "path"
+        "lastModified": 1780585201,
+        "narHash": "sha256-TToBg2HuFDEallQBeeSSCZejqu3fkxNjObx3ZmFARrs=",
+        "ref": "refs/heads/main",
+        "rev": "e8845eb2d5c18fac884d7b6ef59fe46dd453ec61",
+        "revCount": 1,
+        "type": "git",
+        "url": "ssh://git@github.com/DivitMittal/cv-data"
       },
       "original": {
-        "path": "./data.example",
-        "type": "path"
-      },
-      "parent": []
+        "type": "git",
+        "url": "ssh://git@github.com/DivitMittal/cv-data"
+      }
     },
     "devshell": {
       "inputs": {

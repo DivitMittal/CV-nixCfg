@@ -37,7 +37,7 @@
     ## CV personal data — override with your own private repo:
     ##   nix flake lock --override-input cv-data "git+ssh://git@github.com/you/cv-data"
     cv-data = {
-      url = "path:./data.example";
+      url = "git+ssh://git@github.com/DivitMittal/cv-data";
       flake = false;
     };
   };
