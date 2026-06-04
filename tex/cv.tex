@@ -1,7 +1,12 @@
 % ============================================================
-% Divit Mittal — Curriculum Vitae
+% CV-nixCfg — LaTeX CV template
 % Engine: pdflatex / xelatex
 % Class:  moderncv (classic, blue)
+%
+% Personal data is supplied by the cv-data flake input.
+% The devshell startup creates:  tex/cv-data/ -> $CV_DATA_DIR/tex/
+% Override the input for your own data:
+%   nix flake lock --override-input cv-data "git+ssh://git@github.com/you/cv-data"
 % ============================================================
 \documentclass[11pt,a4paper]{moderncv}
 \moderncvstyle{classic}
@@ -19,287 +24,22 @@
 % Tighten bullet list spacing inside \cventry descriptions
 \setlist[itemize]{topsep=2pt, itemsep=1pt, parsep=0pt, leftmargin=1.4em}
 
-% ── Personal data ────────────────────────────────────────────
-\name{Divit}{Mittal}
-\phone[mobile]{+91~9718898585}
-\email{divitmittal@outlook.in}
-\homepage{divit.site}
-\social[github]{DivitMittal}
-\social[linkedin]{divit-mittal}
-\extrainfo{%
-  \faRobot~\href{https://huggingface.co/divitmittal}{huggingface.co/divitmittal}
-  \quad
-  \faChartBar~\href{https://www.kaggle.com/divitmittal}{kaggle.com/divitmittal}%
-}
+% ── Personal data (name, phone, email, social links) ─────────
+\input{cv-data/header}
 
 % ============================================================
 \begin{document}
 \makecvtitle
 \vspace{-1.5em}
 
-% ── Professional Summary ─────────────────────────────────────
-\section{Professional Summary}
-\cvitem{}{%
-  Infrastructure engineer and functional programming specialist with deep expertise in
-  Nix/NixOS, AI/ML, and cloud data engineering. Delivered production consulting work for
-  Tweag (Blockfrost, ModusCreate) optimising CI/CD pipelines and package derivations.
-  Conducted funded research in computer vision transformers at Manipal University.
-  Expert in declarative infrastructure, reproducible builds, and type-safe system design
-  across Linux/macOS/Android platforms.%
-}
-
-% ── Skills ───────────────────────────────────────────────────
-\section{Skills}
-
-\cvitem{\textbf{ML \& Data Science}}{%
-  Deep Learning: Keras \& PyTorch /
-  Machine Learning: scikit-learn, TensorFlow /
-  LLM: Transformers, RAG, Encoders \& Decoders /
-  Big Data: Hadoop, Spark, Hive, Kafka /
-  Dashboarding: MS PowerBI /
-  Image (DL): Vision Transformers, Semantic Segmentation, GANs, Siamese /
-  Computer Vision: OpenCV, ITK /
-  MLOps: HuggingFace, Gradio, Kaggle%
-}
-
-\cvitem{\textbf{DevOps \& SysAdmin}}{%
-  NixOS Expert /
-  IaC: Nix, Ansible \& Terraform /
-  Shells: Bash, Zsh, Fish, Pwsh /
-  CI/CD: GitHub Actions \& Hydra /
-  Cloud: AWS (Lambda, S3, Glue, SageMaker, API Gateway) /
-  Declarative Agentic AI Workflows /
-  VCS: Git \& Jujutsu /
-  Virtualisation \& Containerisation: Proxmox, KVM, Docker \& Podman%
-}
-
-\cvitem{\textbf{Functional Programming}}{%
-  Haskell: FFI, Cabal, type-safe DSL design, monad transformers /
-  Nix Expression Language: advanced derivations, flakes, overlays, cross-compilation /
-  Web: Svelte, TypeScript /
-  Systems: C/C++ interop, LLVM /
-  Audio DSP: Faust, signal processing%
-}
-
-% ── Work Experience ───────────────────────────────────────────
-\section{Work Experience}
-
-\cventry{07/2024--Present}{Nix Ecosystem Consultant}{Tweag}{Remote}{Paid Consulting}{%
-  Advanced Nix ecosystem consulting across enterprise client projects.
-  \begin{itemize}
-    \item \textbf{Blockfrost Cardano Node Integration:} Architected Nix package derivations
-      for Blockfrost's Cardano blockchain infrastructure; achieved reproducible deployments
-      eliminating dependency conflicts and build failures.
-      \textit{Stack: Nix, Cardano Node, Blockfrost API, Haskell ecosystem}
-    \item \textbf{ModusCreate CI/CD Automation:} Designed declarative CI/CD pipelines using
-      NixOS and Hydra; reduced build times via binary caching, achieved 100\% reproducible
-      deployments, eliminated ``works on my machine'' issues.
-      \textit{Stack: NixOS, Hydra, CI/CD, IaC}
-    \item Additional: enterprise configuration management, complex dependency resolution,
-      cross-platform builds, infrastructure cost optimisation via caching.
-  \end{itemize}%
-}
-
-\cventry{12/2021--02/2022}{DevOps \& System Administrator}{UbiOps (Yes!Delft)}{Delft, Netherlands}{}{%
-  Administered containerised environments using Docker/Kubernetes for multi-tenant ML
-  workloads, implemented CI/CD pipelines for automated model deployment, and maintained
-  cloud infrastructure across AWS/GCP.%
-}
-
-% ── Research Experience ───────────────────────────────────────
-\section{Research Experience}
-
-\cventry{05/2025--08/2025}{Funded Deep-Learning Research Position}{Manipal University Jaipur}{Jaipur, India}{Dept.\ of Applied Statistics \& Data Science}{%
-  Research on hybrid transformer (FocalViT + CrossViT) for multi-focus image fusion (MFIF).
-  \begin{itemize}
-    \item \textbf{Architecture:} Combines FocalViT's hierarchical focal attention with
-      CrossViT's cross-branch interaction for superior spatial-spectral feature extraction.
-    \item \textbf{Results:} State-of-the-art fusion quality on benchmark datasets;
-      improved high-frequency detail preservation over CNN-based approaches.
-    \item \textbf{Deployment:} PyTorch model on HuggingFace Model Hub + Spaces and Kaggle.
-    \item \textit{Stack: PyTorch, Transformers, Computer Vision, Gradio, HuggingFace}
-    \item \href{https://huggingface.co/spaces/divitmittal/HybridTransformer-MFIF}{Demo}
-      \textbar{} \href{https://github.com/DivitMittal/HybridTransformer-MFIF}{Code}
-      \textbar{} \href{https://kaggle.com/datasets/divitmittal/lytro-multi-focal-images}{Dataset}
-  \end{itemize}%
-}
-
-% ── Projects ─────────────────────────────────────────────────
-\section{Projects}
-
-\cventry{08/2024--10/2024}%
-  {hs-faust: Haskell DSL for Faust Audio Signal Processing}%
-  {\href{https://github.com/DivitMittal/hs-faust}{github.com/DivitMittal/hs-faust}}{}{}%
-{%
-  GSoC 2025 proposal project developed with Faust project maintainers.
-  \begin{itemize}
-    \item Type-safe Haskell bindings over Faust's C Signal API; compile-time prevention
-      of DSP errors (feedback loops, sample rate mismatches).
-    \item Interfaces with Faust compiler to generate LLVM IR and C++ from Haskell-defined
-      signal graphs.
-    \item \textit{Stack: Haskell, FFI, Faust, C/C++ interop, LLVM, Nix}
-  \end{itemize}%
-}
-
-\cventry{04/2024--Present}%
-  {OS-nixCfg: State-of-the-Art Infrastructure as Code Configuration \normalfont{(17~\faStar)}}%
-  {\href{https://github.com/DivitMittal/OS-nixCfg}{github.com/DivitMittal/OS-nixCfg}}{}{}%
-{%
-  \begin{itemize}
-    \item Unified declarative configuration for 4+ platforms (macOS/nix-darwin,
-      NixOS, Android/nix-on-droid, WSL2); complete deterministic reproducibility.
-    \item Starred by DRW employees; implements flake-parts, agenix/ragenix secrets
-      management, nix-topology network visualisation, GitHub Actions CI/CD.
-    \item 100+ custom Home Manager modules, package derivations, overlays.
-    \item \textit{Stack: Nix, nix-darwin, NixOS, home-manager, flake-parts, agenix}
-  \end{itemize}%
-}
-
-\cventry{09/2024--Present}%
-  {TLTR: Cross-Platform Multi-Layer Keyboard Layout \normalfont{(11~\faStar)}}%
-  {\href{https://github.com/DivitMittal/TLTR}{github.com/DivitMittal/TLTR}}{}{}%
-{%
-  \begin{itemize}
-    \item 38-key, 4-layer Colemak Mod-DH layout for programmer ergonomics; deployed via
-      Kanata (cross-platform), Karabiner-Elements (macOS), and QMK firmware on
-      RP2040-based Piantor split keyboard.
-    \item \textit{Stack: QMK (C), Kanata, Karabiner-Elements, Nix Flakes, keymap-drawer}
-  \end{itemize}%
-}
-
-\cventry{06/2025--Present}%
-  {hammerspoon-nix: Declarative macOS Automation via Nix \normalfont{(10~\faStar)}}%
-  {\href{https://github.com/DivitMittal/hammerspoon-nix}{github.com/DivitMittal/hammerspoon-nix}}{}{}%
-{%
-  \begin{itemize}
-    \item First-class \texttt{programs.hammerspoon} Home Manager option supporting
-      package management, \texttt{configPath}, and declarative Spoon installation.
-    \item \textit{Stack: Nix, Lua, Hammerspoon, macOS, home-manager, flake-parts}
-  \end{itemize}%
-}
-
-\cventry{06/2025--Present}%
-  {firefox-nixCfg: Declarative Firefox Configuration via Nix \normalfont{(14~\faStar)}}%
-  {\href{https://github.com/DivitMittal/firefox-nixCfg}{github.com/DivitMittal/firefox-nixCfg}}{}{}%
-{%
-  \begin{itemize}
-    \item All Firefox preferences, extensions, and userChrome/userContent CSS managed as
-      Nix code; integrates BetterFox hardened profile, Tridactyl, and Sideberry.
-    \item \textit{Stack: Nix, JavaScript (autoconfig), CSS (userChrome), home-manager}
-  \end{itemize}%
-}
-
-\cventry{02/2024}%
-  {DocAssist-LLM @ IEEE MUJ}%
-  {\href{https://github.com/DivitMittal/DocAssist-LLM}{github.com/DivitMittal/DocAssist-LLM}}{}{}%
-{%
-  \begin{itemize}
-    \item RAG-enhanced LLaMA-like transformer for programming documentation assistance,
-      built entirely from scratch (tokenisation \textrightarrow{} embeddings \textrightarrow{} output probabilities).
-    \item RAG via Qdrant vector database on DigitalOcean Docker; Streamlit front-end.
-    \item \textit{Stack: Python, Transformers, RAG, Qdrant, Docker, Streamlit, DigitalOcean}
-  \end{itemize}%
-}
-
-\cventry{10/2023}%
-  {Hazard Map for Lunar Lander Navigation @ SIH}{}{}{}%
-{%
-  \begin{itemize}
-    \item Hazard detection using ISRO Chandrayaan-2 TMC2 \& OHRC sensor data;
-      fused multispectral high-res imagery and stereo-triplet panchromatic data.
-    \item Applied SRGANs, DCNNs, and semantic segmentation for safe landing site
-      identification.
-    \item \textit{Stack: Python, TensorFlow, SRGANs, DCNNs, Computer Vision, Satellite Imagery}
-  \end{itemize}%
-}
-
-\cventry{04/2025}%
-  {Blinkit Customer Churn Analysis}%
-  {\href{https://github.com/DivitMittal/Blinkit-Churn-Analysis}{github.com/DivitMittal/Blinkit-Churn-Analysis}}{}{}%
-{%
-  \begin{itemize}
-    \item H2O.ai AutoML for churn prediction; interactive PowerBI dashboards for
-      stakeholder exploration; Sweetviz for automated data profiling.
-    \item \textit{Stack: Python, H2O.ai AutoML, PowerBI, Sweetviz}
-  \end{itemize}%
-}
-
-% ── Hackathons & Competitions ─────────────────────────────────
-\section{Hackathons \& Competitions}
-
-\cventry{09/2024}{BobbleAI Datathon Winner}{BobbleAI Keyboard}{Gurgaon, Haryana, India}{}{%
-  Processed 8 million event records (70M+ user base) from BobbleAI Keyboard over 5 days.
-  Extracted \& transformed JSON; ML-filtered and stored as Apache Parquet on AWS S3 via
-  serverless AWS Lambda and PySpark on AWS Glue.
-  \textit{Stack: AWS Lambda, AWS Glue, PySpark, AWS S3, Apache Parquet, Python}
-  \quad \href{https://github.com/DivitMittal/Datathon-BigData}{github.com/DivitMittal/Datathon-BigData}%
-}
-
-\cventry{10/2023}{Proglint's Computer Vision 2k23 National Hackathon Winner}{Alliance University}{Anekal, Karnataka, India}{}{%
-  \begin{itemize}
-    \item \textbf{CARLA Autonomous Driving:} High-fidelity CARLA simulator with RGBA \&
-      LiDAR sensors; CNNs for semantic segmentation.
-      \href{https://github.com/DivitMittal/CARLA-Autonomous-Driving}{Code}
-    \item \textbf{Driver Drowsiness Detection:} Siamese Neural Networks + Haar cascade
-      wave filters for real-time facial fatigue detection.
-      \href{https://github.com/DivitMittal/Driver-Drowsiness-Detection}{Code}
-  \end{itemize}%
-}
-
-% ── Honours & Awards ──────────────────────────────────────────
-\section{Honours \& Awards}
-
-\cvitem{01/2020}{\textbf{International Rank 7} --- International Mathematics Olympiad (IMO), The Science Olympiad Foundation, New Delhi}
-
-\cvitem{12/2019}{\textbf{International Rank 49} --- International English Olympiad (IEO), The British Council Division / British High Commission, New Delhi}
-
-\cvitem{01/2019}{\textbf{India National Level Runner-up} --- Vidyarthi Vigyan Manthan, Vijnana Bharati (VIBHA) with Vigyan Prasar, under DST \& NCERT}
-
-% ── Education ─────────────────────────────────────────────────
-\section{Education \& Training}
-
-\cventry{09/2022--Present}%
-  {B.Tech in Data Science \& Engineering}%
-  {Manipal University Jaipur}{Jaipur, Rajasthan, India}%
-  {CGPA: 8.0/10 \textbar{} NQF: NCC5}{}
-
-\cventry{09/2021--09/2022}%
-  {B.Sc in Computer Science \& Engineering}%
-  {Delft University of Technology}{Delft, Netherlands}%
-  {Grade: 8.0/10 \textbar{} 20 ECTS}%
-  {\href{https://europa.eu/!yp79Jh}{Diploma} \textbar{} \href{https://europa.eu/!BB98Ww}{Transcript}}
-
-\cventry{08/2020}%
-  {B.Computing in Computer Science (Summer School)}%
-  {National University of Singapore}{Singapore}{}{}
-
-\cventry{03/2018--07/2020}%
-  {All India Senior School Certificate Examination (Class XII)}%
-  {CBSE --- Delhi Public School, R.K. Puram}{New Delhi, India}%
-  {A1~$\approx$96\% \textbar{} NSQF Level 4 (NCC 2)}%
-  {\href{https://europa.eu/!yp79Jh}{Diploma} \textbar{} \href{https://europa.eu/!BB98Ww}{Transcript}}
-
-\cventry{03/2016--05/2018}%
-  {All India Secondary School Examination (Class X)}%
-  {CBSE --- Bhatnagar International School, Bhera Enclave}{New Delhi, India}%
-  {A1~$\approx$97\% \textbar{} NSQF Level 2 (NCWP 2)}%
-  {\href{https://europa.eu/!Mv98jr}{Diploma} \textbar{} \href{https://europa.eu/!uG83GN}{Transcript}}
-
-% ── Language Skills ───────────────────────────────────────────
-\section{Language Skills}
-
-\cvitem{Mother tongue}{Hindi}
-
-\cvitem{German}{%
-  Goethe-Zertifikat B2 ---
-  Listening: B2 \textbar{} Reading: B2 \textbar{} Writing: B2 \textbar{}
-  Spoken Production: B2 \textbar{} Spoken Interaction: B2%
-}
-
-\cvitem{English}{%
-  IELTS ---
-  Listening: C2 \textbar{} Reading: C2 \textbar{} Writing: C1 \textbar{}
-  Spoken Production: C1 \textbar{} Spoken Interaction: C2%
-}
+\input{cv-data/summary}
+\input{cv-data/skills}
+\input{cv-data/experience}
+\input{cv-data/research}
+\input{cv-data/projects}
+\input{cv-data/hackathons}
+\input{cv-data/honours}
+\input{cv-data/education}
+\input{cv-data/languages}
 
 \end{document}

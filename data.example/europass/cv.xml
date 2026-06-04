@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  Europass CV — example / placeholder data.
+  Replace all fields with your own information.
+  Validate: xmllint --noout --schema europass/schema/v3.4.0/EuropassSchema.xsd data.example/europass/cv.xml
+-->
+<SkillsPassport xmlns="http://europass.cedefop.europa.eu/Europass"
+                xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                xsi:schemaLocation="http://europass.cedefop.europa.eu/Europass http://europass.cedefop.europa.eu/xml/v3.4.0/EuropassSchema.xsd"
+                locale="en">
+  <DocumentInfo>
+    <DocumentType>ECV</DocumentType>
+    <CreationDate>2026-01-01T00:00:00.000Z</CreationDate>
+    <LastUpdateDate>2026-01-01T00:00:00.000Z</LastUpdateDate>
+    <XSDVersion>V3.4</XSDVersion>
+    <Generator>CV-nixCfg (manual XML)</Generator>
+    <EuropassLogo>true</EuropassLogo>
+  </DocumentInfo>
+
+  <LearnerInfo>
+    <Identification>
+      <PersonName>
+        <FirstName>First</FirstName>
+        <Surname>Last</Surname>
+      </PersonName>
+      <ContactInfo>
+        <Address>
+          <Contact>
+            <Country>
+              <Code>XX</Code>
+              <Label>Country</Label>
+            </Country>
+          </Contact>
+        </Address>
+        <Email>
+          <Contact>you@example.com</Contact>
+        </Email>
+        <WebsiteList>
+          <Website>
+            <Contact>https://example.com</Contact>
+            <Use>
+              <Code>personal</Code>
+              <Label>Personal website</Label>
+            </Use>
+          </Website>
+        </WebsiteList>
+      </ContactInfo>
+      <Demographics>
+        <Nationality>
+          <Code>XX</Code>
+          <Label>Nationality</Label>
+        </Nationality>
+      </Demographics>
+    </Identification>
+
+    <WorkExperienceList>
+      <WorkExperience>
+        <Period>
+          <From>
+            <Year>2024</Year>
+            <Month>01</Month>
+          </From>
+          <Current/>
+        </Period>
+        <Position>
+          <Label>Job Title</Label>
+        </Position>
+        <Employer>
+          <Name>Company Name</Name>
+          <ContactInfo>
+            <Address>
+              <Contact>
+                <Country>
+                  <Code>XX</Code>
+                  <Label>Country</Label>
+                </Country>
+              </Contact>
+            </Address>
+          </ContactInfo>
+        </Employer>
+        <Activities>Brief description of role and responsibilities.</Activities>
+      </WorkExperience>
+    </WorkExperienceList>
+
+    <EducationList>
+      <Education>
+        <Period>
+          <From>
+            <Year>2020</Year>
+            <Month>09</Month>
+          </From>
+          <Current/>
+        </Period>
+        <Title>Degree Programme</Title>
+        <Organisation>
+          <Name>University Name</Name>
+          <ContactInfo>
+            <Address>
+              <Contact>
+                <Country>
+                  <Code>XX</Code>
+                  <Label>Country</Label>
+                </Country>
+              </Contact>
+            </Address>
+          </ContactInfo>
+        </Organisation>
+      </Education>
+    </EducationList>
+
+    <SkillList>
+      <LinguisticSkillList>
+        <MotherTongue>
+          <Description>
+            <Label>Language</Label>
+          </Description>
+        </MotherTongue>
+      </LinguisticSkillList>
+    </SkillList>
+  </LearnerInfo>
+</SkillsPassport>

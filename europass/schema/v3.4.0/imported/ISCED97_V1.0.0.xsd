@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Stub. Loose xsd:string for ISCED field codes. -->
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+            targetNamespace="http://europass.cedefop.europa.eu/ISCED/97"
+            elementFormDefault="qualified">
+  <xsd:simpleType name="field-level2">
+    <xsd:restriction base="xsd:string"/>
+  </xsd:simpleType>
+</xsd:schema>

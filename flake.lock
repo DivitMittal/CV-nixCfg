@@ -26,6 +26,18 @@
         "type": "github"
       }
     },
+    "cv-data": {
+      "flake": false,
+      "locked": {
+        "path": "./data.example",
+        "type": "path"
+      },
+      "original": {
+        "path": "./data.example",
+        "type": "path"
+      },
+      "parent": []
+    },
     "devshell": {
       "inputs": {
         "nixpkgs": [
@@ -172,6 +184,7 @@
     "root": {
       "inputs": {
         "actions-nix": "actions-nix",
+        "cv-data": "cv-data",
         "devshell": "devshell",
         "flake-parts": "flake-parts",
         "git-hooks": "git-hooks",

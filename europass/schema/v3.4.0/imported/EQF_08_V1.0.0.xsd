@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Stub. Upstream lived at europass.cedefop.europa.eu/xml/imported/ (now offline).
+     Declares only the eqf:level type as permissive xsd:string for local xmllint validation. -->
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+            targetNamespace="http://europass.cedefop.europa.eu/EQF/08"
+            elementFormDefault="qualified">
+  <xsd:simpleType name="level">
+    <xsd:restriction base="xsd:string"/>
+  </xsd:simpleType>
+</xsd:schema>

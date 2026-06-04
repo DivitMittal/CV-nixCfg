@@ -1,5 +1,5 @@
 {
-  description = "DivitMittal-CV flake";
+  description = "CV-nixCfg flake";
 
   outputs = inputs: let
     inherit (inputs.flake-parts.lib) mkFlake;
@@ -33,6 +33,12 @@
         flake-parts.follows = "flake-parts";
         git-hooks.follows = "git-hooks";
       };
+    };
+    ## CV personal data — override with your own private repo:
+    ##   nix flake lock --override-input cv-data "git+ssh://git@github.com/you/cv-data"
+    cv-data = {
+      url = "path:./data.example";
+      flake = false;
     };
   };
 }

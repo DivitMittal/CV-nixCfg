@@ -10,7 +10,11 @@
         package = pkgs.prek;
         gitPackage = pkgs.gitFull;
         src = ../.;
-        excludes = ["flake.lock"];
+        excludes = [
+          "flake.lock"
+          ## Vendored Europass XSD schemas — not our code to normalise
+          "europass/schema/"
+        ];
         default_stages = ["pre-commit"];
         hooks = {
           ## Formatting
@@ -27,6 +31,8 @@
               "\\.jpeg"
               "\\.svg"
               "\\.gif"
+              ## Vendored Europass XSD (ISO language list is ~519 KB)
+              "europass/schema/"
             ];
           };
           check-case-conflicts.enable = true;

@@ -22,13 +22,22 @@
           name = "PLAYWRIGHT_SKIP_VALIDATE_HOST_REQUIREMENTS";
           value = "true";
         }
+        {
+          name = "CV_DATA_DIR";
+          value = "${inputs.cv-data}";
+        }
       ];
       devshell = rec {
-        name = "DivitMittal-CV";
+        name = "CV-nixCfg";
         motd = "{202}Welcome to {91}${name} {202}devshell!{reset} \n $(menu)";
         startup = {
           git-hooks.text = ''
             ${config.pre-commit.installationScript}
+          '';
+          # Symlink cv-data flake input's tex/ into tex/cv-data so LaTeX
+          # \input{cv-data/header} etc. resolve without absolute paths.
+          link-cv-data.text = ''
+            ln -sfn "${inputs.cv-data}/tex" "$PRJ_ROOT/tex/cv-data"
           '';
         };
         packages = lib.attrsets.attrValues {
@@ -38,7 +47,7 @@
             ## Nix
             nixd
             alejandra
-            ### XML tools (xmllint for schema validation of europass/cv.xml)
+            ### XML tools (xmllint for schema validation of cv.xml)
             libxml2
             ;
           ### Python + Playwright for europass/build.py
