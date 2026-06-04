@@ -20,7 +20,8 @@ jobs:
     - name: Magic Nix Cache(Use GitHub Actions Cache)
       uses: DeterminateSystems/magic-nix-cache-action@main
     - name: Run nix flake check
-      run: nix -vL flake check --impure --all-systems --no-build
+      run: nix -vL flake check --impure --all-systems --no-build --override-input
+        cv-data path:./data.example
     timeout-minutes: 30
 'on':
   pull_request:
