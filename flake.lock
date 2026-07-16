@@ -9,7 +9,7 @@
           "git-hooks"
         ],
         "nixpkgs": [
-          "nixpkgs"
+          "nixpkgs-2605"
         ]
       },
       "locked": {
@@ -45,7 +45,7 @@
     "devshell": {
       "inputs": {
         "nixpkgs": [
-          "nixpkgs"
+          "nixpkgs-2605"
         ]
       },
       "locked": {
@@ -101,7 +101,7 @@
         "flake-compat": "flake-compat",
         "gitignore": "gitignore",
         "nixpkgs": [
-          "nixpkgs"
+          "nixpkgs-2605"
         ]
       },
       "locked": {
@@ -170,6 +170,22 @@
         "type": "github"
       }
     },
+    "nixpkgs-2605": {
+      "locked": {
+        "lastModified": 1784182977,
+        "narHash": "sha256-Hy8zg2HEcsk4WqowQK3UKRXz1fdQM7Z2un3nSyLbJaQ=",
+        "owner": "NixOS",
+        "repo": "nixpkgs",
+        "rev": "29c22b7761070f37c4c2b0dd6a8777f0bd43e268",
+        "type": "github"
+      },
+      "original": {
+        "owner": "NixOS",
+        "ref": "nixpkgs-26.05-darwin",
+        "repo": "nixpkgs",
+        "type": "github"
+      }
+    },
     "nixpkgs-lib": {
       "locked": {
         "lastModified": 1772328832,
@@ -194,6 +210,7 @@
         "git-hooks": "git-hooks",
         "import-tree": "import-tree",
         "nixpkgs": "nixpkgs",
+        "nixpkgs-2605": "nixpkgs-2605",
         "systems": "systems",
         "treefmt-nix": "treefmt-nix"
       }
@@ -216,7 +233,7 @@
     "treefmt-nix": {
       "inputs": {
         "nixpkgs": [
-          "nixpkgs"
+          "nixpkgs-2605"
         ]
       },
       "locked": {
