@@ -48,5 +48,9 @@
       url = "git+ssh://git@github.com/DivitMittal/cv-data";
       flake = false;
     };
+    OS-nixCfg = {
+      url = "github:DivitMittal/OS-nixCfg";
+      flake = false;
+    };
   };
 }
