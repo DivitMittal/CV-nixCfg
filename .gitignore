@@ -43,3 +43,6 @@ __pycache__/
 *.vrb
 *.lof
 *.lot
+
+## git worktrees kept inside the project directory
+.worktrees/
