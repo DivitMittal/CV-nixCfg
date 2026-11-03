@@ -50,6 +50,11 @@
       url = "git+ssh://git@github.com/DivitMittal/cv-data";
       flake = false;
     };
+    ## AI job-search agent; pinned to a release tag (see flake/career-ops.nix)
+    career-ops = {
+      url = "github:career-ops-hq/career-ops/career-ops-v1.38.0";
+      flake = false;
+    };
     OS-nixCfg = {
       url = "github:DivitMittal/OS-nixCfg";
       flake = false;
