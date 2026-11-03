@@ -46,3 +46,6 @@ __pycache__/
 
 ## git worktrees kept inside the project directory
 .worktrees/
+
+## career-ops writable working copy (synced from the flake input by the devshell)
+.career-ops/

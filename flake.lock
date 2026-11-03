@@ -42,6 +42,23 @@
         "type": "github"
       }
     },
+    "career-ops": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1792776101,
+        "narHash": "sha256-nAdBNrUJ3F/tJsP80++pra4k89xPq3vgHnDwFKBGaMs=",
+        "owner": "career-ops-hq",
+        "repo": "career-ops",
+        "rev": "115bc9873e3d43e23883f3c8f16436617facc62c",
+        "type": "github"
+      },
+      "original": {
+        "owner": "career-ops-hq",
+        "ref": "career-ops-v1.38.0",
+        "repo": "career-ops",
+        "type": "github"
+      }
+    },
     "cv-data": {
       "flake": false,
       "locked": {
@@ -221,6 +238,7 @@
       "inputs": {
         "OS-nixCfg": "OS-nixCfg",
         "actions-nix": "actions-nix",
+        "career-ops": "career-ops",
         "cv-data": "cv-data",
         "devshell": "devshell",
         "flake-parts": "flake-parts",

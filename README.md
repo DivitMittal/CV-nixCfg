@@ -40,6 +40,7 @@
 - [Using Your Own Data](#using-your-own-data)
 - [Dev Environment](#dev-environment)
 - [Build](#build)
+- [Job Search (career-ops)](#job-search-career-ops)
 - [Project Structure](#project-structure)
 
 ---
@@ -132,6 +133,24 @@ nix flake check  # pre-commit hooks + formatting
 
 ---
 
+## Job Search (career-ops)
+
+The devshell bundles [career-ops](https://github.com/career-ops-hq/career-ops), an AI job-search agent that scores postings against your CV and drafts tailored applications (it never submits anything itself). Its source is pinned by the `career-ops` flake input; Bun, Node, Playwright browsers, the Playwright MCP server and poppler come from nixpkgs.
+
+```sh
+career-ops                # start Claude Code in the career-ops workspace (first run: bun install)
+career-ops run doctor     # any package.json script via bun run: doctor, scan, ...
+career-ops sync           # force re-sync from the pinned source
+CAREER_OPS_AGENT=codex career-ops   # use another AI CLI
+```
+
+- **Working copy**: `.career-ops/` (gitignored) — a writable mirror of the pinned source, re-synced when the pin changes. Don't edit it; changes are overwritten.
+- **Your data**: `$CAREER_OPS_ROOT` (default `~/career-data`) — `cv.md`, profile, tracker, reports. Kept outside this public repo; export `CAREER_OPS_ROOT` before entering the shell to move it, and back it up as a private git repo.
+- **Updating**: edit the release tag on the `career-ops` input in `flake.nix`, then `nix flake lock --update-input career-ops`. Don't use career-ops' own updater.
+- **Bun**: installs deps and runs `package.json` scripts; the scripts themselves still call `node`, which Playwright requires.
+
+---
+
 ## Project Structure
 
 ```
@@ -162,6 +181,7 @@ nix flake check  # pre-commit hooks + formatting
 │   │   ├── common.nix
 │   │   ├── flake-check.nix
 │   │   └── flake-lock-update.nix
+│   ├── career-ops.nix           # career-ops job-search agent (devshell command)
 │   ├── checks.nix               # Pre-commit hooks via git-hooks.nix
 │   ├── devshells.nix            # devshell: texlive, Python, xmllint, Nix tools
 │   └── formatters.nix           # treefmt config (alejandra, deadnix, statix)

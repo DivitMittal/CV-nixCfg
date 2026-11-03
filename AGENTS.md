@@ -34,6 +34,10 @@ Build the Europass PDF (requires `EUROPASS_EMAIL`/`EUROPASS_PASSWORD` in shell o
 ./build-europass.sh
 ```
 
+## Job search (career-ops)
+
+`flake/career-ops.nix` adds a `career-ops` devshell command wrapping [career-ops](https://github.com/career-ops-hq/career-ops) (pinned via the `career-ops` flake input, `flake = false`, release tag). It rsyncs the store source into gitignored `.career-ops/`, runs `bun install` (scripts via `bun run`; Node stays the script runtime for Playwright) with Playwright pinned to `pkgs.playwright-driver.version`, writes `.mcp.json` for `mcp-server-playwright`, then execs `$CAREER_OPS_AGENT` (default `claude`) there. Personal data lives in `$CAREER_OPS_ROOT` (default `~/career-data`), never in this repo. Bump by changing the tag in `flake.nix`; never run career-ops' `update` script.
+
 ## Using your own cv-data
 
 1. Create a private repo matching `data.example/` layout
@@ -58,6 +62,7 @@ flake.nix              # Entry point — flake-parts + import-tree; declares cv-
 flake/
   devshells.nix        # devshell: texlive, Python+Playwright, xmllint, Nix tools
                        #   sets CV_DATA_DIR; symlinks tex/cv-data/ → cv-data input
+  career-ops.nix       # career-ops job-search agent: `career-ops` devshell command
   checks.nix           # pre-commit hooks via git-hooks.nix
   formatters.nix       # treefmt config (alejandra, deadnix, statix)
   actions/
