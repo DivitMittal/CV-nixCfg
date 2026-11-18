@@ -13,7 +13,7 @@
   <img src="https://img.shields.io/badge/size-~800KB-orange?style=for-the-badge&logo=github&logoColor=white" alt="size" />
     </a>
     <a href="https://github.com/DivitMittal/CV-nixCfg/blob/main/LICENSE">
-  <img src="https://img.shields.io/badge/license-MIT-orange?style=for-the-badge&logo=unlicense&logoColor=white" alt="license"/>
+  <img src="https://img.shields.io/badge/license-HONCL--1.0-orange?style=for-the-badge&logo=unlicense&logoColor=white" alt="license"/>
     </a>
     <a href="https://www.latex-project.org/">
   <img src="https://img.shields.io/badge/LaTeX-moderncv-orange?style=for-the-badge&logo=latex&logoColor=white" alt="latex"/>
